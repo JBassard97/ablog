@@ -15,7 +15,7 @@ export default function Post() {
   }, [post]); // Uncomment if you need to run side effects based on slug
 
   return (
-    <div className="bg-amber-400 flex-1">
+    <div className="bgtransparent flex-1">
       <h1>A single blog post</h1>
       {post && <h2>post: {post.toString()}</h2>}
     </div>

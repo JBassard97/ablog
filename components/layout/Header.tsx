@@ -18,17 +18,21 @@ const pages: string[] = ["Works", "Education", "Blog", "Contact"];
 
 export function Header() {
   return (
-    <header className="h-15 bg-transparent text-white flex justify-between items-center px-4">
+    <header className="h-15 bg-transparent border-b-2 border-gray-800 flex justify-between items-center px-6">
       <Link href="/">
-        <p className={`text-3xl ${cedarville.className}`}>A. Bassard</p>
+        <p
+          className={`text-3xl ${cedarville.className} text-gray-400 hover:text-white transition-colors`}
+        >
+          A. Bassard
+        </p>
       </Link>
       <Sheet>
         <SheetTrigger>
-          <Menu className="h-6 w-6 cursor-pointer" />
+          <Menu className="h-6 w-6 cursor-pointer text-gray-400 hover:text-white transition-colors" />
         </SheetTrigger>
         <SheetContent className="w-1/3 flex flex-col items-center bg-black border-gray-700 text-white">
           <SheetHeader>
-            <SheetTitle className="underline text-2xl text-white">
+            <SheetTitle className=" text-3xl text-white opacity-15">
               Menu
             </SheetTitle>
           </SheetHeader>
