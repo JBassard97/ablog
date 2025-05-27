@@ -14,18 +14,30 @@ const cedarville = Cedarville_Cursive({
   weight: "400",
 });
 
-const pages: string[] = ["Works", "Education", "Blog", "Contact"];
+const pages: string[] = [
+  "About Me",
+  "Works",
+  "Education",
+  "Blog",
+  "Contact Me",
+];
 
 export function Header() {
   return (
     <header className="h-15 bg-transparent border-b-2 border-gray-800 flex justify-between items-center px-6">
-      <Link href="/">
-        <p
-          className={`text-3xl ${cedarville.className} text-gray-400 hover:text-white transition-colors`}
-        >
-          A. Bassard
-        </p>
-      </Link>
+      <div>
+        {/* A. Bassard */}
+        {"A. Bassard".split("").map((char, index) => (
+          <Link href="/" key={index}>
+            <span
+              className={`${cedarville.className} text-3xl inline-block text-gray-400 hover:text-white transition-colors cursor-pointer`}
+            >
+              {char}
+            </span>
+          </Link>
+        ))}
+      </div>
+
       <Sheet>
         <SheetTrigger>
           <Menu className="h-6 w-6 cursor-pointer text-gray-400 hover:text-white transition-colors" />
@@ -38,7 +50,7 @@ export function Header() {
           </SheetHeader>
           {pages.map((page: string, index: number) => (
             <Link
-              href={`/${page.toLowerCase()}`}
+              href={`/${page.toLowerCase().replace(" ", "_")}`}
               key={index}
               className="text-lg text-gray-400 hover:text-white transition-colors"
             >
